@@ -1,0 +1,44 @@
+\ProvidesPackage{beamerfontthemedhuBeamer}[2024/02/08 dhuBeamer Font]
+
+%%%%%%%%%%%%%%%% 自定义字体 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[UTF8, fontset=none]{ctex}  % 清除默认字体
+\usepackage{fontspec}  % 字体设置宏包
+\setCJKmainfont{SimHei}[AutoFakeBold]  % 正文字体
+\setCJKsansfont[AutoFakeBold=3]{SimHei} % 无衬线字体
+\setCJKmonofont[AutoFakeBold=3]{SimHei} % 等宽字体
+\setmainfont{Arial} % 英文字体
+
+\usefonttheme{structurebold} % 标题字体更加突出
+
+%%%%%%%%%%%%%%%% 设置字体大小 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamerfont{title}{size=\LARGE}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{institute}{size=\small}
+\setbeamerfont{date}{size=\footnotesize}
+
+\setbeamerfont{part title}{size=\Large}
+\setbeamerfont{chapter title}{size=\Large}
+
+\setbeamerfont{section title}{size=\Large}
+\setbeamerfont{subsection title}{size=\large}
+
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{framesubtitle}{size=\small}
+
+\setbeamerfont{block title}{size=\normalsize}
+\setbeamerfont{block title alerted}{size=\normalsize}
+\setbeamerfont{block title example}{size=\normalsize}
+
+\setbeamerfont{item}{size=\normalsize}
+\setbeamerfont{item projected}{size=\normalsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+
+\setbeamerfont{normal text}{size=\normalsize}
+\setbeamerfont{footnote}{size=\footnotesize}
+\setbeamerfont{scriptsize}{size=\scriptsize}
+\setbeamerfont{tiny}{size=\tiny}
+
+
+\endinput

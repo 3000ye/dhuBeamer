@@ -1,0 +1,49 @@
+\ProvidesPackage{beamerthemedhuBeamer}[2024/02/08 dhuBeamer]
+
+\usecolortheme{dhuBeamer}
+\usefonttheme{dhuBeamer}
+\useinnertheme{dhuBeamer}
+\useoutertheme{dhuBeamer}
+
+% 设置标题页模板
+\setbeamertemplate{title page}{
+    \vfill % 使内容向上对齐，填充顶部空白
+    \vspace*{4em}
+    \begin{minipage}[b]{\textwidth}
+        \begin{flushleft}
+            {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+
+            \vspace*{8em}
+
+            \usebeamerfont{author}\insertauthor\par
+            \usebeamerfont{institute}\insertinstitute\par
+            \usebeamerfont{date}\insertdate\par
+        \end{flushleft}
+
+        \begin{picture}(0,0)
+            \put(400,65){\makebox(0,0)[rt]{\includegraphics[width=0.4\textwidth]{static/dhuLogoName.png}}}
+        \end{picture}
+    \end{minipage}
+}
+
+% 设置标题页元素的对齐方式
+\setbeamertemplate{title}{\raggedright\inserttitle}
+\setbeamertemplate{subtitle}{\raggedright\insertsubtitle}
+\setbeamertemplate{author}{\raggedright\insertauthor}
+\setbeamertemplate{institute}{\raggedright\insertinstitute}
+\setbeamertemplate{date}{\raggedright\insertdate}
+
+% 设置页面背景
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{static/dhuBackWhite.png}}
+
+% 设置页面 logo
+\usepackage{graphicx}
+\usepackage{pgf}
+\pgfdeclareimage[width=1cm]{logo}{static/dhuLogoNegative.png}
+% \newcommand{\@logo}{logo}
+% \setbeamertemplate{headline}{\hspace{2em}\vspace{2em}\pgfuseimage{\@logo}}
+
+
+
+\endinput
