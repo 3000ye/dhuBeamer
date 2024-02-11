@@ -5,6 +5,9 @@
 \useinnertheme{dhuBeamer}
 \useoutertheme{dhuBeamer}
 
+\usepackage[export]{adjustbox}
+
+
 % 设置标题页模板
 \setbeamertemplate{title page}{
     \vfill % 使内容向上对齐，填充顶部空白
@@ -34,15 +37,21 @@
 \setbeamertemplate{institute}{\raggedright\insertinstitute}
 \setbeamertemplate{date}{\raggedright\insertdate}
 
+% 设置 frametitle 格式
+\setbeamertemplate{frametitle}{%
+    \vspace*{1em}
+    \begin{beamercolorbox}{frametitle}%
+        \usebeamerfont{frametitle}\insertframetitle\\
+        \usebeamerfont{framesubtitle}\insertframesubtitle
+    \end{beamercolorbox}
+
+    \begin{picture}(0,0)
+        \put(-3,40){\makebox(0,0)[rt]{\includegraphics[height=1.5em]{static/dhuLogoTitle.png}}}
+    \end{picture}
+}
+
 % 设置页面背景
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{static/dhuBackWhite.png}}
-
-% 设置页面 logo
-\usepackage{graphicx}
-\usepackage{pgf}
-\pgfdeclareimage[width=1cm]{logo}{static/dhuLogoNegative.png}
-% \newcommand{\@logo}{logo}
-% \setbeamertemplate{headline}{\hspace{2em}\vspace{2em}\pgfuseimage{\@logo}}
 
 
 
