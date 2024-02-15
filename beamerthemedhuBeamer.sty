@@ -5,53 +5,18 @@
 \useinnertheme{dhuBeamer}
 \useoutertheme{dhuBeamer}
 
-\usepackage[export]{adjustbox}
-
-
-% 设置标题页模板
-\setbeamertemplate{title page}{
-    \vfill % 使内容向上对齐，填充顶部空白
-    \vspace*{4em}
-    \begin{minipage}[b]{\textwidth}
-        \begin{flushleft}
-            {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
-            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
-
-            \vspace*{8em}
-
-            \usebeamerfont{author}\insertauthor\par
-            \usebeamerfont{institute}\insertinstitute\par
-            \usebeamerfont{date}\insertdate\par
-        \end{flushleft}
-
-        \begin{picture}(0,0)
-            \put(400,65){\makebox(0,0)[rt]{\includegraphics[width=0.4\textwidth]{static/dhuLogoName.png}}}
-        \end{picture}
-    \end{minipage}
-}
-
-% 设置标题页元素的对齐方式
-\setbeamertemplate{title}{\raggedright\inserttitle}
-\setbeamertemplate{subtitle}{\raggedright\insertsubtitle}
-\setbeamertemplate{author}{\raggedright\insertauthor}
-\setbeamertemplate{institute}{\raggedright\insertinstitute}
-\setbeamertemplate{date}{\raggedright\insertdate}
-
-% 设置 frametitle 格式
-\setbeamertemplate{frametitle}{%
-    \vspace*{1em}
-    \begin{beamercolorbox}{frametitle}%
-        \usebeamerfont{frametitle}\insertframetitle\\
-        \usebeamerfont{framesubtitle}\insertframesubtitle
-    \end{beamercolorbox}
-
-    \begin{picture}(0,0)
-        \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
-    \end{picture}
-}
+% 强制 16:9 幻灯片比例
+\RequirePackage{geometry}
+\geometry{paperwidth=16cm,paperheight=9cm}
 
 % 设置页面背景
-\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{static/dhuBackWhite.png}}
+\usepackage{tikz}
+
+\usebackgroundtemplate{%
+    \tikz\node[opacity=0.5,inner sep=0pt]{  % 设置背景透明度为 0.5
+        \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackWhite.png}
+    };
+}
 
 
 

@@ -1,4 +1,4 @@
-\documentclass[12pt, aspectratio=169]{beamer}
+\documentclass[12pt]{beamer}
 \usepackage{beamerthemedhuBeamer}
 
 \title{这里是主标题 main title}
@@ -8,16 +8,14 @@
 % \date{}
 
 
-
 \begin{document}
+\maketitle
 
-\begin{frame}
-    \titlepage
-\end{frame}
 
 \section{第一章}
 
 \subsection{第一节}
+
 
 \begin{frame}[t]
     \frametitle{幻灯片标题 frame title}
@@ -31,6 +29,50 @@
 
 \end{frame}
 
+\footlinecolor{dhuDemaskRed}
+\begin{frame}[t]
+    \frametitle{幻灯片标题 frame title}
+    \framesubtitle{幻灯片副标题 frame sub title}
+
+    English is Arial.
+
+    \insertsection
+
+    \begin{block}{区块测试}
+        区块
+    \end{block}
+
+\end{frame}
+
+\section{第二章}
+\subsection{第一节}
+\subsubsection{第一回}
+
+\begin{frame}[t]
+    \frametitle{幻灯片标题 frame title}
+    \framesubtitle{幻灯片副标题 frame sub title}
+
+    \begin{itemize}
+        \item 第一级
+        \begin{itemize}
+            \item 第二级
+            \begin{itemize}
+                \item 第三级
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+    \begin{enumerate}
+        \item 第一级
+        \begin{enumerate}
+            \item 第二级
+            \begin{enumerate}
+                \item 第三级
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+
+\end{frame}
 
 \end{document}
 

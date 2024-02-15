@@ -1,1 +1,116 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 外部主题 (Outer Themes)
+% 一个外部主题 (outer theme) 控制着幻灯片的“外部”或“边界”的显示方式
+%     1. 顶部导航区 (headline)
+%     2. 底部导航区 (footline)
+%     3. 侧栏 (sidebar)
+%     4. 徽标 (Logo)
+%     5. 导航符 (navigation symbol)
+%     6. 导航条 (navigation bars)
+%     7. 帧标题 (frametitle)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \ProvidesPackage{beamerouterthemedhuBeamer}[2024/02/08 dhuBeamer Outer]
+% 设置标题页模板
+\setbeamertemplate{title page}{
+    \vfill % 使内容向上对齐，填充顶部空白
+    \vspace*{4em}
+    \begin{minipage}[b]{\textwidth}
+        \begin{flushleft}
+            {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}
+            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
+
+            \vspace*{8em}
+
+            \usebeamerfont{author}\insertauthor\par
+            \usebeamerfont{institute}\insertinstitute\par
+            \usebeamerfont{date}\insertdate\par
+        \end{flushleft}
+
+        % 设置 logo 位置
+        \begin{picture}(0,0)
+            \put(400,65){\makebox(0,0)[rt]{\includegraphics[width=0.4\textwidth]{static/dhuLogoName.png}}}
+        \end{picture}
+    \end{minipage}
+}
+
+% 设置标题页元素的对齐方式
+\setbeamertemplate{title}{\raggedright\inserttitle}
+\setbeamertemplate{subtitle}{\raggedright\insertsubtitle}
+\setbeamertemplate{author}{\raggedright\insertauthor}
+\setbeamertemplate{institute}{\raggedright\insertinstitute}
+\setbeamertemplate{date}{\raggedright\insertdate}
+
+% 重写 maketitle 命令
+\renewcommand{\maketitle}{
+    \begingroup
+        \begin{frame}[plain]
+            \titlepage
+        \end{frame}
+    \endgroup
+}
+
+% 设置 帧标题 frametitle 格式
+\setbeamertemplate{frametitle}{%
+    \vspace*{1em}
+    \begin{beamercolorbox}{frametitle}%
+        \usebeamerfont{frametitle}\insertframetitle\\
+        \usebeamerfont{framesubtitle}\insertframesubtitle
+    \end{beamercolorbox}
+
+    % 设置 logo 位置
+    \begin{picture}(0,0)
+        \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
+    \end{picture}
+}
+
+% 不显示 导航符 navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% 设置 底部导航区 footline 格式
+\newcommand{\@footlineInfo}{
+    % 判断 section, subsection, subsubsection 是否存在
+    \ifx \insertsection \@empty
+    \else
+        \insertsection
+    \fi
+    \ifx \insertsubsection \@empty
+    \else
+        \enspace$\vert$\enspace \insertsubsection
+    \fi
+    \ifx \insertsubsubsection \@empty
+    \else
+        \enspace$\vert$\enspace \insertsubsubsection
+    \fi
+    \hfill
+    \insertframetitle  % 插入 frametitle
+    \hfill 
+    \insertauthor \enspace$\vert$\enspace \inserttitle
+}
+\newcommand{\@footlinepayoff}{\@footlineInfo}
+\newcommand{\footlinepayoff}[1]{\renewcommand{\@footlinepayoff}{#1}}
+
+% 定义 footline 内容及格式
+\setbeamertemplate{footline}{%
+    \begin{beamercolorbox}[wd=\textwidth,ht=3mm,dp=1.5mm,rightskip=1cm,leftskip=1cm]{footline}        
+        \ifstrempty{\@footlinepayoff}{}{%
+            \@footlinepayoff
+        }
+    \end{beamercolorbox}
+}
+
+% 根据选项设置 footline 颜色
+\newcommand{\footlinecolor}[1]{% if #1 is empty, makes footline transparent
+    \ifstrempty{#1}{%
+        \footlinepayoff{}
+        \setbeamercolor{footline}{fg=, bg=}
+        \setbeamercolor{page number in head/foot}{fg=, bg=}
+    }{
+        \footlinepayoff{\@footlineInfo}
+        \setbeamercolor{footline}{fg=white,bg=#1}
+        \setbeamercolor{page number in head/foot}{fg=white, bg=#1}
+    }%
+}
+
+\footlinecolor{}
