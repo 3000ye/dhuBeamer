@@ -11,13 +11,22 @@
 
 % 设置页面背景
 \usepackage{tikz}
-
-\usebackgroundtemplate{
-    \tikz\node[opacity=0.5,inner sep=0pt]{  % 设置背景透明度为 0.5
-        \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackWhite.png}
-    };
+\newcommand{\setBackground}[1]{
+    \ifstrempty{#1}{
+        \usebackgroundtemplate{
+            \tikz\node[opacity=0.5,inner sep=0pt]{  % 设置背景透明度为 0.5
+                \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackWhite.png}
+            };
+        }
+    }{
+        \usebackgroundtemplate{
+            \tikz\node[opacity=1,inner sep=0pt]{
+                \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackRed.png}
+            };
+        }
+    }
 }
-
-
+% 默认使用白色背景
+\setBackground{}
 
 \endinput

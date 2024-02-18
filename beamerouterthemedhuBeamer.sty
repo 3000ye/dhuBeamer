@@ -58,7 +58,7 @@
 \setbeamertemplate{frametitle}{%
     \vspace*{1em}
     \begin{beamercolorbox}{frametitle}%
-        \usebeamerfont{frametitle}\insertframetitle\\
+        \usebeamerfont{frametitle}\insertframetitle\par
         \usebeamerfont{framesubtitle}\insertframesubtitle
     \end{beamercolorbox}
 
@@ -67,6 +67,7 @@
         \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
     \end{picture}
 }
+
 
 % 不显示 导航符 navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -88,6 +89,10 @@
     \fi
     \hfill
     \insertframetitle  % 插入 frametitle
+    \ifx \insertframesubtitle \@empty
+    \else
+        \enspace$\vert$\enspace \insertframesubtitle
+    \fi
     \hfill 
     \insertauthor \enspace$\vert$\enspace \inserttitle
 }

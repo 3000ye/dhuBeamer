@@ -19,3 +19,41 @@
 
 % 设置 块 block 为圆角
 \setbeamertemplate{blocks}[rounded]
+
+% Define sectioning and table of contents
+\AtBeginSection[]
+{
+    \begingroup
+        \usebackgroundtemplate{
+            \tikz\node[opacity=1,inner sep=0pt]{
+                \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackRed.png}
+            };
+        }
+
+        \setbeamercolor{frametitle}{fg=white}
+        \setbeamercolor{framesubtitle}{fg=white}
+
+        \setbeamertemplate{frametitle}{%
+            \vspace*{1em}
+            \begin{beamercolorbox}{frametitle}%
+                \usebeamerfont{frametitle}\insertframetitle\par
+                \usebeamerfont{framesubtitle}\insertframesubtitle
+            \end{beamercolorbox}
+
+            % 设置 logo 位置
+            \begin{picture}(0,0)
+                \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitleRed.png}}}
+            \end{picture}
+        }
+
+        \begin{frame}[t]
+            \frametitle{目录}
+            \framesubtitle{Table of Contents}
+
+            \tableofcontents[currentsection]
+        \end{frame}
+    \endgroup
+}
+
+% style of section presented in the table of contents
+\setbeamertemplate{section in toc}{$\blacktriangleright$~\inserttocsection}
