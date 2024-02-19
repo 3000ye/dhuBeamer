@@ -1,74 +1,125 @@
 \documentclass[12pt]{beamer}
 \usepackage{resume/dhuBeamer}
 
-\title{这里是标题 Title}
-\subtitle{这里是副标题 sub title}
-\author{这里是作者 author}
-\institute{这里是学院 institute}
-% \date{}
+\title{东华大学 dhuBeamer 模板}
+\subtitle{beamer 副标题}
+\author[Castor]{黄川桂}
+\institute{管院 \& 计院}
+\date{\today}
 
 
 \begin{document}
 \maketitle
 
 
-\section{第一章}
-\subsection{第一节}
+\section{为什么使用 \LaTeX 和 Beamer}
 
-\begin{frame}[t]
-    \frametitle{标题 frame title}
-    \framesubtitle{副标题 frame sub title}
+\begin{frame}
+    \frametitle{\LaTeX 和 Beamer 简介}
 
-    正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文正文
+    \LaTeX 是一种用于排版文档的标记语言，广泛用于学术界、出版业和技术文档中。
+    它以其专业的排版质量和对数学公式的支持而闻名。
+    \LaTeX 使用类似编程的语法，用户通过输入文本和特定命令来描述文档结构和格式，然后通过编译生成最终的文档。
 
-    \begin{block}{块标题}
-        块正文块正文块正文块正文块正文块正文块正文块正文
-    \end{block}
+    ~\par
 
-    \begin{itemize}
-        \item 这里是无序列表
-        \item 这里是无序列表
-    \end{itemize}
-
-    \begin{enumerate}
-        \item 这里是有序列表
-        \item 这里是有序列表
-    \end{enumerate}
-
+    Beamer 是 \LaTeX 的一个文档类，用于制作演示文稿。它提供了许多功能和样式，使用户能够轻松创建专业和漂亮的演示文稿。
+    Beamer 支持幻灯片、动画、表格、数学公式等，同时具有丰富的主题和布局选项，让用户能够自定义演示文稿的外观和感觉。
 \end{frame}
 
-\section{第二章}
+\begin{frame}
+    \frametitle{\LaTeX 和 PowerPoint 对比}
 
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l|l}
+            Microsoft\textsuperscript{\textregistered}  PowerPoint & \LaTeX \ Beamer\\
+            \midrule
+            字处理工具 & 专业排版软件 \\
+            容易上手，简单直观 & 容易上手 \\
+            所见即所得 & 所见即所想，所想即所得 \\
+            高级功能不易掌握 & 进阶难，但一般用不到 \\
+            处理长文档需要丰富经验 & 和短文档处理基本无异 \\
+            花费大量时间调格式 & 无需担心格式，专心作者内容 \\
+            公式排版差强人意 & 尤其擅长公式排版 \\
+            二进制格式，兼容性差 & 文本文件，易读、稳定 \\
+            付费商业许可 & 自由免费使用 \\
+        \end{tabular}
+    \end{table}
+\end{frame}
 
 \begin{frame}[t]
-    \frametitle{幻灯片标题 frame title}
-    \framesubtitle{幻灯片副标题 frame sub title}
+    \frametitle{公式排版举例}
+
+    \begin{columns}[T,onlytextwidth]
+        \begin{column}{0.48\textwidth}
+            \begin{block}{行内公式与跨行公式}
+                行内公式：$\mathcal{F}(\xi)=\int_{-\infty}^{\infty} f(x)\mathrm{e}^{-\mathrm{j}2\pi
+                \xi x}\,\mathrm{d}x$
+
+                跨行公式：
+                $$
+                \mathcal{F}(\xi)=\int_{-\infty}^{\infty} f(x)\mathrm{e}^{-\mathrm{j}2\pi\xi x}\,\mathrm{d}x
+                $$
+            \end{block}
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \begin{block}{无编号与有编号公式}
+                无编号公式：
+                \begin{equation*}
+                    \mathcal{F}(\xi)=\int_{-\infty}^{\infty} f(x)\mathrm{e}^{-\mathrm{j}2\pi
+                    \xi x}\,\mathrm{d}x
+                \end{equation*}
+
+                有编号公式：
+                \begin{equation}
+                    \mathcal{F}(\xi)=\int_{-\infty}^{\infty} f(x)\mathrm{e}^{-\mathrm{j}2\pi
+                    \xi x}\,\mathrm{d}x
+                \end{equation}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{dhuBeamer 模板介绍}
+
+\begin{frame}
+    \frametitle{模板参考}
 
     \begin{itemize}
-        \item 第一级
+        \item 模板制作参考
         \begin{itemize}
-            \item 第二级
-            \begin{itemize}
-                \item 第三级
-            \end{itemize}
+            \item \href{https://github.com/sjtug/SJTUBeamer}{SJTUBeamer}
+            \item \href{https://www.overleaf.com/latex/templates/bei-da-zhong-wen-mo-ban-pku-beamer-template/kfxpbtzrqhrn}{PKU-Beamer-Template}
+        \end{itemize}
+        \item 模板风格参考
+        \begin{itemize}
+            \item \href{https://www.dhu.edu.cn/_upload/article/files/d2/8c/2137ec0c44238fd6fbd3ee28ff07/9f9b566a-67f1-4717-991f-477ee5b43acb.zip}{东华大学标准与学术 PPT 模板（2020版）}
+        \end{itemize}
+        \item 模板元素来源
+        \begin{itemize}
+            \item \href{https://www.dhu.edu.cn/bsxt/listm.htm}{东华大学标识系统}
+            \item 东华大学 LOGO，背景
+            \item 东华大学颜色：锦缎红，晨曦红，风帆黄，基石灰
         \end{itemize}
     \end{itemize}
 
-    \begin{enumerate}
-        \item 第一级
-        \begin{enumerate}
-            \item 第二级
-            \begin{enumerate}
-                \item 第三级
-            \end{enumerate}
-        \end{enumerate}
-    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{模板现状}
+
+    本模板由黄川桂于2024年2月发布 v1.0 版本，已在多个平台开源：
+
+    \begin{itemize}
+        \item Github: \href{https://github.com/3000ye/dhuBeamer}{dhuBeamer}
+        \item Overleaf: 
+    \end{itemize}
 
 \end{frame}
 
-\section{第三章}
-
-\section{第四章}
+\section{dhuBeamer 模板使用说明}
 
 
 \makebottom

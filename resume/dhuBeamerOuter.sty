@@ -94,10 +94,17 @@
         \usebeamerfont{framesubtitle}\insertframesubtitle
     \end{beamercolorbox}
 
-    % 设置 logo 位置
-    \begin{picture}(0,0)
-        \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
-    \end{picture}
+    \ifx \insertframesubtitle \@empty
+        % 设置 logo 位置
+        \begin{picture}(0,0)
+            \put(-4,38){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
+        \end{picture}
+    \else
+        % 设置 logo 位置
+        \begin{picture}(0,0)
+            \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
+        \end{picture}
+    \fi
 }
 
 % 不显示 导航符 navigation symbols
@@ -125,7 +132,7 @@
         \enspace$\vert$\enspace \insertframesubtitle
     \fi
     \hfill 
-    \insertauthor \enspace$\vert$\enspace \inserttitle
+    \insertshortauthor \enspace$\vert$\enspace \inserttitle
 }
 \newcommand{\@footlinepayoff}{\@footlineInfo}
 \newcommand{\footlinepayoff}[1]{\renewcommand{\@footlinepayoff}{#1}}
