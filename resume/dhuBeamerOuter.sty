@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\ProvidesPackage{beamerouterthemedhuBeamer}[2024/02/08 dhuBeamer Outer]
+\ProvidesPackage{resume/dhuBeamerOuter}[2024/02/08 dhuBeamer Outer]
 % 设置标题页模板
 \setbeamertemplate{title page}{
     \vfill % 使内容向上对齐，填充顶部空白
@@ -54,6 +54,38 @@
     \footlinecolor{dhuDemaskRed}
 }
 
+% 增加结尾页
+\newcommand{\makebottom}{
+    \begingroup
+        \usebackgroundtemplate{
+            \tikz\node[opacity=1,inner sep=0pt]{
+                \includegraphics[height=\paperheight,width=\paperwidth]{static/dhuBackRed.png}
+            };
+        }
+        
+        \begin{frame}[c, plain]
+            \vfill % 使内容向上对齐，填充顶部空白
+            \vspace*{4em}
+            \begin{minipage}[b]{\textwidth}
+                \begin{flushleft}
+                    {\Huge\textcolor{white}{感谢各位聆听}\par}
+        
+                    \vspace*{8em}
+        
+                    \usebeamerfont{author}\textcolor{white}{\insertauthor}\par
+                    \usebeamerfont{institute}\textcolor{white}{\insertinstitute}\par
+                    \usebeamerfont{date}\textcolor{white}{\insertdate}
+                \end{flushleft}
+        
+                % 设置 logo 位置
+                \begin{picture}(0,0)
+                    \put(400,65){\makebox(0,0)[rt]{\includegraphics[width=0.4\textwidth]{static/dhuLogoNameWhite.png}}}
+                \end{picture}
+            \end{minipage}
+        \end{frame}
+    \endgroup
+}
+
 % 设置 帧标题 frametitle 格式
 \setbeamertemplate{frametitle}{%
     \vspace*{1em}
@@ -67,7 +99,6 @@
         \put(-4,44){\makebox(0,0)[rt]{\includegraphics[height=1.8em]{static/dhuLogoTitle.png}}}
     \end{picture}
 }
-
 
 % 不显示 导航符 navigation symbols
 \setbeamertemplate{navigation symbols}{}
@@ -121,3 +152,5 @@
     }
 }
 \footlinecolor{}
+
+\endinput

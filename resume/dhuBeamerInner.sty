@@ -10,7 +10,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\ProvidesPackage{beamerinnerthemedhuBeamer}[2024/02/08 dhuBeamer Inner]
+\ProvidesPackage{resume/dhuBeamerInner}[2024/02/08 dhuBeamer Inner]
 
 % 设置 无极列表 itemize 的项目符号
 \setbeamertemplate{itemize items}[circle]
@@ -50,6 +50,8 @@
             \frametitle{目录}
             \framesubtitle{Table of Contents}
 
+            % 目录只显示一级标题
+            \setcounter{tocdepth}{1}
             \tableofcontents[currentsection]
         \end{frame}
     \endgroup
@@ -57,3 +59,5 @@
 
 % style of section presented in the table of contents
 \setbeamertemplate{section in toc}{$\blacktriangleright$~\inserttocsection}
+
+\endinput
