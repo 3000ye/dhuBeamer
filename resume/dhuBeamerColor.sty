@@ -1,5 +1,7 @@
 \ProvidesPackage{resume/dhuBeamerColor}[2024/02/08 dhuBeamer Color]
 
+\usepackage{xcolor}
+
 %%%%%%%%%%%%%%%% 自定义颜色 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{dhuDemaskRed}{RGB}{160, 2, 31}  % 锦缎红
 \definecolor{dhuDawnRed}{RGB}{184, 24, 34}  % 晨曦红
@@ -25,13 +27,20 @@
 \setbeamercolor{block title}{fg=white, bg=dhuDawnRed}
 \setbeamercolor{block body}{fg=black, bg=dhuBaseLime!30}
 
+\setbeamercolor{caption name}{fg=dhuDemaskRed}
+
 \setbeamercolor{alerted text}{fg=dhuDemaskRed}
 
 \setbeamercolor{item}{fg=dhuDemaskRed}
 
 \setbeamercolor{section in toc}{fg=dhuSailYellow}
 
-
+% 设置参考文献文本颜色
+\setbeamercolor{bibliography entry author}{fg=dhuDemaskRed}
+\setbeamercolor{bibliography entry title}{fg=dhuDemaskRed} 
+\setbeamercolor{bibliography entry location}{fg=dhuDemaskRed} 
+\setbeamercolor{bibliography entry note}{fg=dhuDemaskRed}  
+\setbeamercolor{bibliography item}{fg=dhuDemaskRed}
 
 
 

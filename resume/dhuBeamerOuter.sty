@@ -55,7 +55,7 @@
 }
 
 % 增加结尾页
-\newcommand{\makebottom}{
+\newcommand{\makebottom}[1]{
     \begingroup
         \usebackgroundtemplate{
             \tikz\node[opacity=1,inner sep=0pt]{
@@ -68,7 +68,11 @@
             \vspace*{4em}
             \begin{minipage}[b]{\textwidth}
                 \begin{flushleft}
-                    {\Huge\textcolor{white}{感谢各位聆听}\par}
+                    \ifx #1 \@empty
+                        {\Huge\textcolor{white}{感谢各位聆听}\par}
+                    \else
+                        {\Huge\textcolor{white}{#1}}
+                    \fi
         
                     \vspace*{8em}
         
