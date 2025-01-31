@@ -20,3 +20,5 @@
 *.fls
 *.vrb
 *.fdb_latexmk
+
+.DS_Store
