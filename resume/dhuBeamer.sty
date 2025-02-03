@@ -18,7 +18,7 @@
 \usepackage{bm} % 公式加粗
 \usepackage{mathrsfs} % 花体字母
 % 图片设置
-\usepackage{caption} % 设置图片标题
+\usepackage{caption} % 设置图片（表格）标题
 \usepackage{float} % 控制图片位置
 \usepackage{subfigure} % 图片并排
 \usepackage{graphicx} % 页眉插入图片支持
@@ -53,6 +53,15 @@
 }
 % 默认使用白色背景
 \setBackground{}
+
+% 设置图片（表格）的 caption 距离
+\captionsetup{aboveskip=2pt, belowskip=2pt}
+% 设置图片（表格）的 caption 和 section 联动
+\captionsetup[table]{labelformat=simple, labelsep=space}
+\renewcommand{\thetable}{\thesection.\arabic{table} }
+\captionsetup[figure]{labelformat=simple, labelsep=space}
+\renewcommand{\thefigure}{\thesection.\arabic{figure} }
+
 
 \def\cmd#1{\texttt{$\backslash$#1}}
 \def\env#1{\texttt{$\backslash$#1\{\}}}

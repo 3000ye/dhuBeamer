@@ -1,6 +1,8 @@
 \documentclass[12pt]{beamer}
 \usepackage{resume/dhuBeamer}
 
+% \special{dvipdfmx:config z 0} % 取消PDF压缩，加快速度，最终版本生成的时候需要把这句话注释掉
+
 \title{东华大学 dhuBeamer 模板}
 \subtitle{beamer 副标题}
 \author[3000ye]{黄川桂}
@@ -240,7 +242,6 @@
 \begin{frame}{插入单张表格}
     \begin{table}[H]
         \centering
-        \caption{表格标题}
             \begin{tabular}{c||l}
             \toprule
             parameter  & Description \\
@@ -253,6 +254,7 @@
             $R_{ik}$ & Maximum influence radius of a single honeycomb \\
             \bottomrule
             \end{tabular}%
+        \caption{表格标题}
         \label{tab: 一个表}%
     \end{table}%
 \end{frame}
