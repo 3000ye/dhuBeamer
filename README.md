@@ -8,8 +8,8 @@
 
 ```shell
 sudo mkdir -p /usr/local/texlive/texmf-local/tex/latex/custom/dhuBeamer/
-sudo cp -r resume/ /usr/local/texlive/texmf-local/tex/latex/custom/dhuBeamer/
-sudo cp -r static/ /usr/local/texlive/texmf-local/tex/latex/custom/dhuBeamer/
+sudo cp -r resume/ /usr/local/texlive/texmf-local/tex/latex/custom/dhuBeamer/resume/
+sudo cp -r static/ /usr/local/texlive/texmf-local/tex/latex/custom/dhuBeamer/static/
 
 sudo mktexlsr
 ```
